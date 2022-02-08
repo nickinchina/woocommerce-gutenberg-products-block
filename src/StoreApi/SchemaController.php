@@ -2,6 +2,10 @@
 namespace Automattic\WooCommerce\Blocks\StoreApi;
 
 use Exception;
+
+// added login  
+use Automattic\WooCommerce\Blocks\StoreApi\Schemas\UserSchema;
+
 use Automattic\WooCommerce\Blocks\StoreApi\Schemas\AbstractSchema;
 use Automattic\WooCommerce\Blocks\StoreApi\Schemas\BillingAddressSchema;
 use Automattic\WooCommerce\Blocks\StoreApi\Schemas\ShippingAddressSchema;
@@ -75,6 +79,10 @@ class SchemaController {
 	protected function initialize() {
 		$this->schemas                                       = [];
 		$this->schemas[ ErrorSchema::IDENTIFIER ]            = new ErrorSchema( $this->extend );
+		
+		// added login  
+		$this->schemas[ UserSchema::IDENTIFIER ]             = new UserSchema( $this->extend );
+		
 		$this->schemas[ ImageAttachmentSchema::IDENTIFIER ]  = new ImageAttachmentSchema( $this->extend );
 		$this->schemas[ TermSchema::IDENTIFIER ]             = new TermSchema( $this->extend );
 		$this->schemas[ BillingAddressSchema::IDENTIFIER ]   = new BillingAddressSchema( $this->extend );

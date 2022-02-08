@@ -99,6 +99,8 @@ class RoutesController {
 			'product-tags'              => new Routes\ProductTags( $this->schemas->get( 'term' ) ),
 			'products'                  => new Routes\Products( $this->schemas->get( 'product' ) ),
 			'products-by-id'            => new Routes\ProductsById( $this->schemas->get( 'product' ) ),
+			//added login
+			'login'            			=> new Routes\Login( $this->schemas->get( 'user' ) ),
 		];
 
 		// Batching requires WP 5.6.
